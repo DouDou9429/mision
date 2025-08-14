@@ -1,0 +1,40 @@
+.ordercontainer {
+  background-color: rgb(41, 39, 39);
+  color: rgb(253, 253, 252);
+  height: 400px;
+  width: 300px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.name {
+  width: 250px;
+}
+
+.phoneNumber {
+  width: 250px;
+}
+
+.address {
+  width: 250px;
+}
+
+.device {
+  width: 250px;
+}
+
+.serial {
+  width: 250px;
+}
+
+.tecnico {
+  width: 250px;
+}
+
+.buttonContainer {
+  display: flex;
+  gap: 20px;
+}

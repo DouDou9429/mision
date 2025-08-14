@@ -1,0 +1,24 @@
+.repairs {
+  padding: 2rem;
+}
+
+.repairs-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+.repairs-table th,
+.repairs-table td {
+  border: 1px solid #ddd;
+  padding: 0.75rem;
+  text-align: left;
+}
+
+.repairs-table th {
+  background-color: #f0f0f0;
+}
+
+.repairs-table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
