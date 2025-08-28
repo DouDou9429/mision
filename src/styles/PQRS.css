@@ -1,0 +1,363 @@
+.pqrs-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0c0c0c 0%, #1a1a2e 50%, #16213e 100%);
+  color: white;
+  padding: 2rem;
+}
+
+.pqrs-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.pqrs-header h1 {
+  font-size: 3rem;
+  color: #00ffff;
+  text-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+  margin-bottom: 1rem;
+}
+
+.pqrs-header p {
+  font-size: 1.2rem;
+  color: #b8b8b8;
+}
+
+.pqrs-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+}
+
+/* Información PQRS */
+.pqrs-info h3 {
+  color: #00ffff;
+  text-shadow: 0 0 15px rgba(0, 255, 255, 0.3);
+  margin-bottom: 2rem;
+  font-size: 1.8rem;
+  text-align: center;
+}
+
+.pqrs-types {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.pqrs-type {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  transition: all 0.3s ease;
+}
+
+.pqrs-type:hover {
+  transform: translateX(10px);
+  border-color: rgba(0, 229, 255, 0.3);
+  box-shadow: 0 8px 25px rgba(0, 229, 255, 0.2);
+}
+
+.type-icon {
+  font-size: 2.5rem;
+  min-width: 60px;
+  text-align: center;
+}
+
+.pqrs-type h4 {
+  color: #00ffff;
+  margin: 0 0 0.5rem 0;
+  font-size: 1.3rem;
+}
+
+.pqrs-type p {
+  color: #b8b8b8;
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* Formulario PQRS */
+.pqrs-form {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 2rem;
+  backdrop-filter: blur(10px);
+}
+
+.pqrs-form h3 {
+  color: #00ffff;
+  text-shadow: 0 0 15px rgba(0, 255, 255, 0.3);
+  margin-bottom: 2rem;
+  font-size: 1.8rem;
+  text-align: center;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #00ffff;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.form-input,
+.form-select,
+.form-textarea {
+  width: 100%;
+  padding: 12px 16px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(0, 229, 255, 0.3);
+  border-radius: 8px;
+  color: white;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.form-input:focus,
+.form-select:focus,
+.form-textarea:focus {
+  outline: none;
+  border-color: #00e5ff;
+  box-shadow: 0 0 15px rgba(0, 229, 255, 0.3);
+  background: rgba(0, 229, 255, 0.1);
+}
+
+.form-input::placeholder,
+.form-textarea::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.form-select option {
+  background: #2a2a2a;
+  color: white;
+}
+
+.form-textarea {
+  resize: vertical;
+  min-height: 120px;
+  font-family: inherit;
+}
+
+.form-file {
+  background: rgba(255, 255, 255, 0.05);
+  border: 2px dashed rgba(0, 229, 255, 0.3);
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+  color: #b8b8b8;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.form-file:hover {
+  border-color: #00e5ff;
+  background: rgba(0, 229, 255, 0.05);
+}
+
+.form-file::-webkit-file-upload-button {
+  background: linear-gradient(90deg, #00e5ff, #7c4dff);
+  border: none;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-right: 10px;
+  font-weight: 600;
+}
+
+.form-file::-webkit-file-upload-button:hover {
+  opacity: 0.9;
+}
+
+.form-group small {
+  display: block;
+  margin-top: 0.5rem;
+  color: #b8b8b8;
+  font-size: 0.85rem;
+}
+
+.form-actions {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.submit-btn {
+  background: linear-gradient(90deg, #00e5ff, #7c4dff);
+  border: none;
+  color: white;
+  padding: 15px 40px;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.submit-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 229, 255, 0.4);
+}
+
+.submit-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.loading-spinner {
+  width: 20px;
+  height: 20px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-top: 2px solid white;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Página de éxito */
+.pqrs-success {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0c0c0c 0%, #1a1a2e 50%, #16213e 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+
+.success-content {
+  background: rgba(255, 255, 255, 0.05);
+  border: 2px solid rgba(0, 229, 255, 0.3);
+  border-radius: 20px;
+  padding: 3rem;
+  text-align: center;
+  max-width: 600px;
+  backdrop-filter: blur(10px);
+  animation: fadeInUp 0.5s ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.success-icon {
+  font-size: 4rem;
+  margin-bottom: 1.5rem;
+  animation: bounce 1s ease-in-out;
+}
+
+@keyframes bounce {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-10px);
+  }
+  60% {
+    transform: translateY(-5px);
+  }
+}
+
+.success-content h2 {
+  color: #00ffff;
+  text-shadow: 0 0 15px rgba(0, 255, 255, 0.3);
+  margin-bottom: 1.5rem;
+  font-size: 2rem;
+}
+
+.success-content p {
+  color: #b8b8b8;
+  margin-bottom: 1rem;
+  line-height: 1.6;
+  font-size: 1.1rem;
+}
+
+.success-content strong {
+  color: #00e5ff;
+}
+
+.success-details {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  background: rgba(0, 229, 255, 0.05);
+  border-radius: 12px;
+  border: 1px solid rgba(0, 229, 255, 0.2);
+}
+
+.success-details p {
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+}
+
+.success-details strong {
+  color: #00ffff;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .pqrs-container {
+    padding: 1rem;
+  }
+
+  .pqrs-header h1 {
+    font-size: 2rem;
+  }
+
+  .pqrs-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .pqrs-form {
+    padding: 1.5rem;
+  }
+
+  .success-content {
+    padding: 2rem;
+    margin: 1rem;
+  }
+
+  .success-content h2 {
+    font-size: 1.5rem;
+  }
+}

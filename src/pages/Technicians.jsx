@@ -3,6 +3,12 @@ import "../styles/Technicians.css";
 
 function Technicians() {
   const [technicians, setTechnicians] = useState([]);
+  const [form, setForm] = useState({
+    name: "",
+    specialty: "",
+    icon: "👨‍🔧",
+    experience: "",
+  });
 
   useEffect(() => {
     // Técnicos por defecto
@@ -33,9 +39,51 @@ function Technicians() {
     setTechnicians(finalTechnicians);
   }, []);
 
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setForm((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const handleAdd = (e) => {
+    e.preventDefault();
+    if (!form.name || !form.specialty) return;
+    const updated = [...technicians, form];
+    setTechnicians(updated);
+    localStorage.setItem("technicians", JSON.stringify(updated));
+    setForm({ name: "", specialty: "", icon: "👨‍🔧", experience: "" });
+  };
+
   return (
     <div className="technicians">
       <h2>Técnicos Disponibles</h2>
+      <form onSubmit={handleAdd} className="technician-form">
+        <input
+          name="name"
+          value={form.name}
+          onChange={handleChange}
+          placeholder="Nombre"
+        />
+        <input
+          name="specialty"
+          value={form.specialty}
+          onChange={handleChange}
+          placeholder="Especialidad"
+        />
+        <input
+          name="experience"
+          value={form.experience}
+          onChange={handleChange}
+          placeholder="Experiencia"
+        />
+        <select name="icon" value={form.icon} onChange={handleChange}>
+          <option>👨‍🔧</option>
+          <option>🔧</option>
+          <option>⚒️</option>
+          <option>🧰</option>
+          <option>🛠️</option>
+        </select>
+        <button type="submit">Agregar técnico</button>
+      </form>
       <div className="technician-list">
         {technicians.length > 0 ? (
           technicians.map((tech, index) => (
