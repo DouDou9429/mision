@@ -25,13 +25,12 @@ const Contact = () => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simular envío
+    // UN envio ficticio
     await new Promise((resolve) => setTimeout(resolve, 2000));
 
     setIsSubmitting(false);
     setSubmitSuccess(true);
 
-    // Resetear formulario después de 3 segundos
     setTimeout(() => {
       setSubmitSuccess(false);
       setFormData({
