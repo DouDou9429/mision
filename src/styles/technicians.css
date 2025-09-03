@@ -13,6 +13,33 @@
   text-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
 }
 
+.technician-form {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 10px;
+  max-width: 1000px;
+  margin: 0 auto 20px;
+}
+
+.technician-form input,
+.technician-form select {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.06);
+  color: white;
+}
+
+.technician-form button {
+  padding: 10px 16px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  background: linear-gradient(90deg, #00e5ff, #7c4dff);
+  color: white;
+  font-weight: 700;
+}
+
 .technician-list {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));

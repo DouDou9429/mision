@@ -1,80 +1,145 @@
 .table {
   width: 100%;
   border-collapse: collapse;
-  background-color: rgb(41, 39, 39);
-  border: 1px solid black;
-  color: white;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  overflow: hidden;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
 
 .table th,
 .table td {
-  border: 1px solid white;
-  padding: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 12px 8px;
   text-align: center;
+  max-width: 200px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  vertical-align: middle;
+  transition: all 0.3s ease;
+}
+
+.table th {
+  background: rgba(124, 77, 255, 0.3);
+  color: white;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
+}
+
+.table td {
+  color: white;
+  font-size: 0.9rem;
+}
+
+.table tbody tr {
+  transition: all 0.3s ease;
+}
+
+.table tbody tr:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: scale(1.01);
 }
 
 .actions {
   display: flex;
   justify-content: center;
-  gap: 10px;
+  gap: 8px;
   flex-wrap: wrap;
+  min-width: 150px;
 }
 
 .reportColumn {
   text-align: center;
   vertical-align: middle;
+  min-width: 120px;
 }
 
 .updateButton {
-  background-color: #007bff;
+  background: linear-gradient(135deg, #007bff, #0056b3);
   color: white;
   border: none;
-  padding: 6px 12px;
-  border-radius: 4px;
+  padding: 8px 12px;
+  border-radius: 8px;
   cursor: pointer;
-  font-size: 12px;
-  transition: background-color 0.3s;
-}
-
-.updateButton:hover {
-  background-color: #0056b3;
-}
-
-.reportButton {
-  background-color: #17a2b8;
-  color: white;
-  border: none;
-  padding: 8px 16px;
-  border-radius: 4px;
-  cursor: pointer;
-  font-size: 12px;
-  transition: background-color 0.3s;
+  font-size: 11px;
+  transition: all 0.3s ease;
+  font-weight: 500;
   white-space: nowrap;
 }
 
+.updateButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 123, 255, 0.4);
+}
+
+.reportButton {
+  background: linear-gradient(135deg, #10b981, #059669);
+  color: white;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-block;
+  transition: all 0.3s ease;
+}
+
 .reportButton:hover {
-  background-color: #138496;
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.4);
+  transform: translateY(-1px);
 }
 
 .disabledReport {
-  color: #6c757d;
-  font-size: 12px;
+  color: #9ca3af;
+  font-size: 0.8rem;
   font-style: italic;
+  padding: 8px 16px;
+  background: rgba(156, 163, 175, 0.1);
+  border-radius: 8px;
+  display: inline-block;
+}
+
+.observationsButton {
+  background: linear-gradient(135deg, #8b5cf6, #7c3aed);
+  color: white;
+  padding: 6px 12px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.8rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.observationsButton:hover {
+  box-shadow: 0 4px 12px rgba(139, 92, 246, 0.4);
+  transform: translateY(-1px);
 }
 
 .deleteButton {
-  background-color: #dc3545;
+  background: linear-gradient(135deg, #dc3545, #c82333);
   color: white;
   border: none;
-  padding: 6px 12px;
-  border-radius: 4px;
+  padding: 8px 12px;
+  border-radius: 8px;
   cursor: pointer;
-  font-size: 12px;
-  transition: background-color 0.3s;
+  font-size: 11px;
+  transition: all 0.3s ease;
+  font-weight: 500;
+  white-space: nowrap;
 }
 
 .deleteButton:hover {
-  background-color: #c82333;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(220, 53, 69, 0.4);
 }
 
 .modalOverlay {
@@ -83,66 +148,143 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(0, 0, 0, 0.8);
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 1000;
+  backdrop-filter: blur(5px);
 }
 
 .modal {
-  background-color: rgb(41, 39, 39);
-  border: 2px solid white;
-  border-radius: 8px;
-  padding: 20px;
-  min-width: 300px;
+  background: linear-gradient(135deg, #2c3e50, #34495e);
+  border: 2px solid rgba(124, 77, 255, 0.5);
+  border-radius: 15px;
+  padding: 2rem;
+  min-width: 350px;
   text-align: center;
   color: white;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(10px);
 }
 
 .modal h3 {
   margin-top: 0;
   margin-bottom: 15px;
-  color: #007bff;
+  color: #74b9ff;
+  font-size: 1.5rem;
 }
 
 .modal p {
   margin-bottom: 20px;
+  font-size: 1.1rem;
 }
 
+/* Botones de estado */
 .statusButtons {
   display: flex;
-  flex-direction: column;
-  gap: 10px;
-  margin-bottom: 20px;
+  gap: 15px;
+  margin: 20px 0;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .statusButton {
-  padding: 10px 20px;
+  padding: 12px 20px;
   border: none;
-  border-radius: 4px;
+  border-radius: 25px;
+  font-weight: 600;
+  font-size: 1rem;
   cursor: pointer;
-  font-size: 14px;
-  font-weight: bold;
-  color: white;
-  transition: opacity 0.3s;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  min-width: 120px;
+  position: relative;
+  overflow: hidden;
+}
+
+.statusButton::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.3),
+    transparent
+  );
+  transition: left 0.6s ease;
+}
+
+.statusButton:hover::before {
+  left: 100%;
 }
 
 .statusButton:hover {
-  opacity: 0.8;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
 }
 
 .cancelButton {
-  background-color: #6c757d;
+  background: linear-gradient(135deg, #6c757d, #495057);
   color: white;
   border: none;
-  padding: 8px 16px;
-  border-radius: 4px;
+  padding: 10px 20px;
+  border-radius: 8px;
   cursor: pointer;
-  font-size: 14px;
-  transition: background-color 0.3s;
+  font-weight: 600;
+  transition: all 0.3s ease;
 }
 
 .cancelButton:hover {
-  background-color: #5a6268;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(108, 117, 125, 0.4);
+}
+
+/* Responsive para móviles */
+@media (max-width: 768px) {
+  .table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+    font-size: 0.8rem;
+  }
+
+  .table th,
+  .table td {
+    padding: 8px 6px;
+    max-width: 150px;
+    font-size: 0.8rem;
+  }
+
+  .actions {
+    min-width: 120px;
+    gap: 5px;
+  }
+
+  .updateButton,
+  .reportButton,
+  .deleteButton {
+    padding: 6px 8px;
+    font-size: 10px;
+  }
+
+  .modal {
+    min-width: 300px;
+    padding: 1.5rem;
+    margin: 1rem;
+  }
+
+  .statusButtons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .statusButton {
+    min-width: 120px;
+  }
 }
