@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useMemo } from "react";
 import styles from "../styles/OrderRegistration.module.css";
+import { createWorkOrder } from "../api/workOrders";
 
 const OrderRegistration = ({ addOrder }) => {
   const [orderData, setOrderData] = useState({
@@ -34,12 +35,12 @@ const OrderRegistration = ({ addOrder }) => {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit =async (e) => {
     e.preventDefault();
 
     // Aqui validamos  que los campos requeridos estén llenos
     if (
-      !orderData.cliente ||
+      // !orderData.cliente ||
       !orderData.telefono ||
       !orderData.equipo ||
       !orderData.especialidad ||
@@ -51,16 +52,40 @@ const OrderRegistration = ({ addOrder }) => {
       return;
     }
 
+    // const newOrder = {
+    //   ...orderData,
+    //   estado: "Pendiente",
+    //   fechaCreacion:
+    //     orderData.fechaCreacion || new Date().toISOString().split("T")[0],
+    //   id: Date.now(),
+    //   fechaActualizacion: new Date().toISOString().split("T")[0],
+    // };
+
+    // addOrder(newOrder);
+
+    //funcion api
+
     const newOrder = {
-      ...orderData,
-      estado: "Pendiente",
-      fechaCreacion:
-        orderData.fechaCreacion || new Date().toISOString().split("T")[0],
-      id: Date.now(),
-      fechaActualizacion: new Date().toISOString().split("T")[0],
+      orderNumber:Date.now(),
+     
+      
+      updatedAt:"2025-09-03 14:30:00",
+      deviceId:3,
+      technicianId:1,
+      clientId:1,
+
     };
 
-    addOrder(newOrder);
+    try {
+
+      //llamado a la api
+
+      await createWorkOrder(newOrder)
+      
+    } catch (error) {
+      console.log(error)
+      
+    }
 
     setOrderData({
       cliente: "",
