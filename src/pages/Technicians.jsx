@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import "../styles/Technicians.css";
+import "../styles/technicians.css";
 
 function Technicians() {
   const [technicians, setTechnicians] = useState([]);
